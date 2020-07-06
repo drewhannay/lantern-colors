@@ -1,7 +1,8 @@
-# Compiled class file
+# Compiled & generated files
 *.class
 build
 run
+/src/generated/
 
 # Log file
 *.log
@@ -12,3 +13,6 @@ out
 
 # Gradle
 .gradle
+
+# Mac
+.DS_Store

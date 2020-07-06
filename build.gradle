@@ -81,7 +81,10 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'lanterncolors', '--all', '--output', file('src/generated/resources/')
+            // https://github.com/MinecraftForge/ForgeGradle/issues/690
+            jvmArgs '-XstartOnFirstThread'
+
+            args '--mod', 'lanterncolors', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources')
 
             mods {
                 lanterncolors {

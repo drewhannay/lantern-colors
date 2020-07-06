@@ -13,11 +13,18 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.15.2-1.0'
+version = "${mc_version}-1.0"
 group = 'com.drewhannay.lanterncolors'
 archivesBaseName = 'lanterncolors'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+repositories {
+    // JEI
+    maven { url "https://dvs1.progwml6.com/files/maven" }
+    // JEI Fallback
+    maven { url = "https://modmaven.k-4u.nl" }
+}
 
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
@@ -109,6 +116,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

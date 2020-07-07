@@ -18,13 +18,13 @@ version="${file.jarVersion}" #mandatory
  # A display name for the mod
 displayName="Lantern Colors" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="" #optional - TODO: Look into this when publishing
+# updateJSONURL="" #optional - TODO: Look into this when publishing
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://github.com/drewhannay/lantern-colors" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="lanterncolors.png" #optional
 # A text field displayed in the mod UI
-credits="" #optional
+# credits="" #optional
 # A text field displayed in the mod UI
 authors="drewhannay" #optional
 # The description text for the mod (multi line!) (#mandatory)

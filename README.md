@@ -1,2 +1,3 @@
-# lantern-colors
-Minecraft mod adding colored variants of lanterns
+# Colored Lanterns
+
+WIP: Minecraft mod adding colored variants of lanterns

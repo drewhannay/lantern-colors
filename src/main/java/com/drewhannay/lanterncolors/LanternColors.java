@@ -8,14 +8,14 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.drewhannay.lanterncolors.LanternColors.*;
+import static com.drewhannay.lanterncolors.LanternColors.MODID;
 
 
 @Mod(MODID)
 public class LanternColors {
+
     public static final String MODID = "lanterncolors";
 
-    // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
     public LanternColors() {

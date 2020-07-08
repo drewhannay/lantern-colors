@@ -1,7 +1,7 @@
 package com.drewhannay.lanterncolors.datagen;
 
 import com.drewhannay.lanterncolors.LanternColors;
-import com.drewhannay.lanterncolors.setup.Registration;
+import com.drewhannay.lanterncolors.items.ColoredLanternItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -16,9 +16,12 @@ public class Items extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        getBuilder(Registration.COLORED_LANTERN_ITEM.get().getRegistryName().getPath())
-            .parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated")))
-            .texture("layer0", modLoc("item/coloredlantern"));
+        ColoredLanternItems.getItems().forEach(item -> {
+            getBuilder(item.getRegistryName().getPath())
+                .parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated")))
+                .texture("layer0", modLoc("item/coloredlantern"));
+            // TODO: use real textures
+        });
     }
 
     @Override

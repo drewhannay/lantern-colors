@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "forge:glass_panes"
+      "tag": "forge:glass_panes/lime"
     },
     {
       "tag": "lanterncolors:lanterns"
     }
   ],
   "result": {
-    "item": "lanterncolors:coloredlantern"
+    "item": "lanterncolors:lime_coloredlantern"
   }
 }

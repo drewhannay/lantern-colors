@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:glass_panes/light_gray"
+    },
+    {
+      "tag": "lanterncolors:lanterns"
+    }
+  ],
+  "result": {
+    "item": "lanterncolors:light_gray_coloredlantern"
+  }
+}

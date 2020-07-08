@@ -1,7 +1,7 @@
 package com.drewhannay.lanterncolors.datagen;
 
 import com.drewhannay.lanterncolors.LanternColors;
-import com.drewhannay.lanterncolors.setup.Registration;
+import com.drewhannay.lanterncolors.blocks.ColoredLanternBlocks;
 import net.minecraft.block.LanternBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
@@ -21,26 +21,29 @@ public class BlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        BlockModelBuilder modelLantern =
-            models().getBuilder(Registration.COLORED_LANTERN_BLOCK.get().getRegistryName().getPath())
-                    .parent(new ModelFile.UncheckedModelFile(mcLoc("block/lantern")))
-                    .texture("particle", modLoc("block/coloredlantern"))
-                    .texture("all", modLoc("block/coloredlantern"));
+        ColoredLanternBlocks.getBlocks().forEach(block -> {
+            // TODO: use real textures
+            BlockModelBuilder modelLantern =
+                models().getBuilder(block.getRegistryName().getPath())
+                        .parent(new ModelFile.UncheckedModelFile(mcLoc("block/lantern")))
+                        .texture("particle", modLoc("block/coloredlantern"))
+                        .texture("all", modLoc("block/coloredlantern"));
 
-        BlockModelBuilder modelHangingLantern =
-            models().getBuilder("block/hanging_lantern")
-                    .parent(new ModelFile.UncheckedModelFile(mcLoc("block/hanging_lantern")))
-                    .texture("particle", modLoc("block/coloredlantern"))
-                    .texture("all", modLoc("block/coloredlantern"));
+            BlockModelBuilder modelHangingLantern =
+                models().getBuilder(block.getRegistryName().getPath().replace("_coloredlantern", "_hanging_coloredlantern"))
+                        .parent(new ModelFile.UncheckedModelFile(mcLoc("block/hanging_lantern")))
+                        .texture("particle", modLoc("block/coloredlantern"))
+                        .texture("all", modLoc("block/coloredlantern"));
 
-        getVariantBuilder(Registration.COLORED_LANTERN_BLOCK.get()).forAllStates(state -> {
-            BlockModelBuilder model;
-            if (state.get(LanternBlock.HANGING)) {
-                model = modelHangingLantern;
-            } else {
-                model = modelLantern;
-            }
-            return ConfiguredModel.builder().modelFile(model).build();
+            getVariantBuilder(block).forAllStates(state -> {
+                BlockModelBuilder model;
+                if (state.get(LanternBlock.HANGING)) {
+                    model = modelHangingLantern;
+                } else {
+                    model = modelLantern;
+                }
+                return ConfiguredModel.builder().modelFile(model).build();
+            });
         });
     }
 

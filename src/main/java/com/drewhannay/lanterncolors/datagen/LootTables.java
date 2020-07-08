@@ -1,7 +1,7 @@
 package com.drewhannay.lanterncolors.datagen;
 
 import com.drewhannay.lanterncolors.LanternColors;
-import com.drewhannay.lanterncolors.setup.Registration;
+import com.drewhannay.lanterncolors.blocks.ColoredLanternBlocks;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Block;
@@ -13,13 +13,14 @@ import net.minecraft.world.storage.loot.LootParameterSets;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraft.world.storage.loot.LootTableManager;
 import net.minecraft.world.storage.loot.ValidationTracker;
+import net.minecraftforge.fml.RegistryObject;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class LootTables extends LootTableProvider {
 
@@ -51,12 +52,12 @@ public class LootTables extends LootTableProvider {
 
         @Override
         protected Iterable<Block> getKnownBlocks() {
-            return Collections.singletonList(Registration.COLORED_LANTERN_BLOCK.get());
+            return ColoredLanternBlocks.REGISTRY.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
         }
 
         @Override
         protected void addTables() {
-            registerDropSelfLootTable(Registration.COLORED_LANTERN_BLOCK.get());
+            ColoredLanternBlocks.getBlocks().forEach(this::registerDropSelfLootTable);
         }
     }
 }

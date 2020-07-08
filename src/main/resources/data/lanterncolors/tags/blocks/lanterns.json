@@ -2,6 +2,21 @@
   "replace": false,
   "values": [
     "minecraft:lantern",
-    "lanterncolors:coloredlantern"
+    "lanterncolors:white_coloredlantern",
+    "lanterncolors:orange_coloredlantern",
+    "lanterncolors:magenta_coloredlantern",
+    "lanterncolors:light_blue_coloredlantern",
+    "lanterncolors:yellow_coloredlantern",
+    "lanterncolors:lime_coloredlantern",
+    "lanterncolors:pink_coloredlantern",
+    "lanterncolors:gray_coloredlantern",
+    "lanterncolors:light_gray_coloredlantern",
+    "lanterncolors:cyan_coloredlantern",
+    "lanterncolors:purple_coloredlantern",
+    "lanterncolors:blue_coloredlantern",
+    "lanterncolors:brown_coloredlantern",
+    "lanterncolors:green_coloredlantern",
+    "lanterncolors:red_coloredlantern",
+    "lanterncolors:black_coloredlantern"
   ]
 }

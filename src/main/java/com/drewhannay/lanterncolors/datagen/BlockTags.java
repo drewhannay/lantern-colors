@@ -1,7 +1,7 @@
 package com.drewhannay.lanterncolors.datagen;
 
 import com.drewhannay.lanterncolors.LanternColors;
-import com.drewhannay.lanterncolors.setup.Registration;
+import com.drewhannay.lanterncolors.blocks.ColoredLanternBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.BlockTagsProvider;
@@ -20,7 +20,8 @@ public class BlockTags extends BlockTagsProvider {
 
     @Override
     protected void registerTags() {
-        getBuilder(LANTERNS).add(Blocks.LANTERN).add(Registration.COLORED_LANTERN_BLOCK.get());
+        Tag.Builder<Block> builder = getBuilder(LANTERNS).add(Blocks.LANTERN);
+        ColoredLanternBlocks.getBlocks().forEach(builder::add);
     }
 
     @Override

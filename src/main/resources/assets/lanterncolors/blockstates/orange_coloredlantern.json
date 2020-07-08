@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "lanterncolors:block/orange_coloredlantern"
+    },
+    "hanging=true": {
+      "model": "lanterncolors:block/orange_hanging_coloredlantern"
+    }
+  }
+}

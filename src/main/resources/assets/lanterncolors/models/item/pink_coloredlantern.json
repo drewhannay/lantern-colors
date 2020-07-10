@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lanterncolors:item/coloredlantern"
+    "layer0": "lanterncolors:item/pink_coloredlantern"
   }
 }

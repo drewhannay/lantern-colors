@@ -1,7 +1,7 @@
 {
   "parent": "block/lantern",
   "textures": {
-    "particle": "lanterncolors:block/coloredlantern",
-    "all": "lanterncolors:block/coloredlantern"
+    "particle": "lanterncolors:block/lime_coloredlantern",
+    "all": "lanterncolors:block/lime_coloredlantern"
   }
 }

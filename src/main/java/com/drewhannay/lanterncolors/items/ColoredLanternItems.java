@@ -21,13 +21,13 @@ public final class ColoredLanternItems {
     public static final DeferredRegister<Item> REGISTRY =
         new DeferredRegister<>(ForgeRegistries.ITEMS, LanternColors.MODID);
 
-    private static final Map<DyeColor, RegistryObject<Item>> REGISTRY_OBJECTS = new EnumMap<>(DyeColor.class);
+    private static final Map<DyeColor, RegistryObject<BlockItem>> REGISTRY_OBJECTS = new EnumMap<>(DyeColor.class);
 
     public static void init() {
         Stream.of(DyeColor.values())
               .forEach(dyeColor -> {
                   RegistryObject<ColoredLanternBlock> block = ColoredLanternBlocks.getRegistryObject(dyeColor);
-                  RegistryObject<Item> registeredObject =
+                  RegistryObject<BlockItem> registeredObject =
                       REGISTRY.register(block.getId().getPath(),
                                         () -> new BlockItem(block.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
                   REGISTRY_OBJECTS.put(dyeColor, registeredObject);
@@ -36,7 +36,7 @@ public final class ColoredLanternItems {
         ColoredLanternItems.REGISTRY.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
-    public static Stream<Item> getItems() {
+    public static Stream<BlockItem> getItems() {
         return REGISTRY_OBJECTS.values().stream().map(RegistryObject::get);
     }
 }

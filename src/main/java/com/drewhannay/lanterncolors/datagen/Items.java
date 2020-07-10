@@ -1,6 +1,7 @@
 package com.drewhannay.lanterncolors.datagen;
 
 import com.drewhannay.lanterncolors.LanternColors;
+import com.drewhannay.lanterncolors.blocks.ColoredLanternBlock;
 import com.drewhannay.lanterncolors.items.ColoredLanternItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
@@ -17,10 +18,11 @@ public class Items extends ItemModelProvider {
     @Override
     protected void registerModels() {
         ColoredLanternItems.getItems().forEach(item -> {
+            // TODO: Can we do this without casting?
+            ColoredLanternBlock block = (ColoredLanternBlock) item.getBlock();
             getBuilder(item.getRegistryName().getPath())
                 .parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated")))
-                .texture("layer0", modLoc("item/coloredlantern"));
-            // TODO: use real textures
+                .texture("layer0", modLoc("item/" + block.registryName()));
         });
     }
 

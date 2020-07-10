@@ -22,18 +22,17 @@ public class BlockStates extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         ColoredLanternBlocks.getBlocks().forEach(block -> {
-            // TODO: use real textures
             BlockModelBuilder modelLantern =
                 models().getBuilder(block.getRegistryName().getPath())
                         .parent(new ModelFile.UncheckedModelFile(mcLoc("block/lantern")))
-                        .texture("particle", modLoc("block/coloredlantern"))
-                        .texture("all", modLoc("block/coloredlantern"));
+                        .texture("particle", modLoc("block/" + block.registryName()))
+                        .texture("all", modLoc("block/" + block.registryName()));
 
             BlockModelBuilder modelHangingLantern =
                 models().getBuilder(block.getRegistryName().getPath().replace("_coloredlantern", "_hanging_coloredlantern"))
                         .parent(new ModelFile.UncheckedModelFile(mcLoc("block/hanging_lantern")))
-                        .texture("particle", modLoc("block/coloredlantern"))
-                        .texture("all", modLoc("block/coloredlantern"));
+                        .texture("particle", modLoc("block/" + block.registryName()))
+                        .texture("all", modLoc("block/" + block.registryName()));
 
             getVariantBuilder(block).forAllStates(state -> {
                 BlockModelBuilder model;

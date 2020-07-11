@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "lanterncolors:lime_coloredlantern"
+    ]
+  },
+  "criteria": {
+    "has_lantern": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "lanterncolors:lanterns"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "lanterncolors:lime_coloredlantern"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lantern",
+      "has_the_recipe"
+    ]
+  ]
+}

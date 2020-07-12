@@ -1,6 +1,6 @@
 # Lantern Colors <img src="src/main/resources/logo.png" width="48">
 
-![CI](https://github.com/drewhannay/lantern-colors/workflows/Java%20CI%20with%20Gradle/badge.svg)
+![CI](https://github.com/drewhannay/lantern-colors/workflows/CI/badge.svg)
 
 Minecraft mod that adds variants of lanterns for every dye color.
 

@@ -1,4 +1,4 @@
-# Colored Lanterns
+# Lantern Colors <img src="src/main/resources/logo.png" width="48">
 
 ![Java CI with Gradle](https://github.com/drewhannay/lantern-colors/workflows/Java%20CI%20with%20Gradle/badge.svg)
 

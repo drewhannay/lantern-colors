@@ -7,3 +7,7 @@
 ## 1.0.1-1.15.2
 
 - Fixed broken transparency which was especially noticeable in hanging lanterns [#7](https://github.com/drewhannay/lantern-colors/pull/7)
+
+## 2.0.0-1.16.1
+
+- Initial release for 1.16.1

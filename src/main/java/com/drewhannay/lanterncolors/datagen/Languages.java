@@ -29,6 +29,6 @@ public class Languages extends LanguageProvider {
     }
 
     private String getTranslationName(DyeColor color) {
-        return Arrays.stream(StringUtils.split(color.getName(), "_")).map(StringUtils::capitalise).collect(Collectors.joining(" "));
+        return Arrays.stream(StringUtils.split(color.getString(), "_")).map(StringUtils::capitalise).collect(Collectors.joining(" "));
     }
 }

@@ -15,15 +15,16 @@ public class ColoredLanternBlock extends LanternBlock {
         super(
             Block.Properties.create(Material.IRON)
                             .hardnessAndResistance(3.5F)
+                            .setRequiresTool()
                             .sound(SoundType.LANTERN)
-                            .lightValue(15)
+                            .setLightLevel((blockState) -> 15)
                             .notSolid()
         );
         this.color = color;
     }
 
     public String registryName() {
-        return color.getName() + "_coloredlantern";
+        return color.getString() + "_coloredlantern";
     }
 
     public DyeColor getDyeColor() {

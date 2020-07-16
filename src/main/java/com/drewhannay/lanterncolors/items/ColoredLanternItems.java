@@ -18,8 +18,8 @@ import java.util.stream.Stream;
 
 public final class ColoredLanternItems {
 
-    public static final DeferredRegister<Item> REGISTRY =
-        new DeferredRegister<>(ForgeRegistries.ITEMS, LanternColors.MODID);
+    public static final DeferredRegister<Item> REGISTRY
+        = DeferredRegister.create(ForgeRegistries.ITEMS, LanternColors.MODID);
 
     private static final Map<DyeColor, RegistryObject<BlockItem>> REGISTRY_OBJECTS = new EnumMap<>(DyeColor.class);
 

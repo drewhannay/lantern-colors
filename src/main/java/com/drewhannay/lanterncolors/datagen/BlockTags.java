@@ -6,13 +6,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.tags.Tag;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.tags.ITag;
 
 public class BlockTags extends BlockTagsProvider {
 
-    public static final Tag<Block> LANTERNS =
-        new net.minecraft.tags.BlockTags.Wrapper(new ResourceLocation(LanternColors.MODID, "lanterns"));
+    public static final ITag.INamedTag<Block> LANTERNS = net.minecraft.tags.BlockTags.makeWrapperTag(LanternColors.MODID + ":lanterns");
 
     public BlockTags(DataGenerator generatorIn) {
         super(generatorIn);
@@ -20,8 +18,8 @@ public class BlockTags extends BlockTagsProvider {
 
     @Override
     protected void registerTags() {
-        Tag.Builder<Block> builder = getBuilder(LANTERNS).add(Blocks.LANTERN);
-        ColoredLanternBlocks.getBlocks().forEach(builder::add);
+        Builder<Block> builder = func_240522_a_(LANTERNS).func_240532_a_(Blocks.LANTERN);
+        ColoredLanternBlocks.getBlocks().forEach(builder::func_240532_a_);
     }
 
     @Override

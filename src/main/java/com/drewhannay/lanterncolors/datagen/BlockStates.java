@@ -8,7 +8,6 @@ import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
-import net.minecraftforge.client.model.generators.ModelFile;
 
 import javax.annotation.Nonnull;
 
@@ -24,15 +23,13 @@ public class BlockStates extends BlockStateProvider {
         ColoredLanternBlocks.getBlocks().forEach(block -> {
             BlockModelBuilder modelLantern =
                 models().getBuilder(block.getRegistryName().getPath())
-                        .parent(new ModelFile.UncheckedModelFile(mcLoc("block/lantern")))
-                        .texture("particle", modLoc("block/" + block.registryName()))
-                        .texture("all", modLoc("block/" + block.registryName()));
+                        .parent(models().getExistingFile(mcLoc("block/template_lantern")))
+                        .texture("lantern", modLoc("block/" + block.registryName()));
 
             BlockModelBuilder modelHangingLantern =
                 models().getBuilder(block.getRegistryName().getPath().replace("_coloredlantern", "_hanging_coloredlantern"))
-                        .parent(new ModelFile.UncheckedModelFile(mcLoc("block/hanging_lantern")))
-                        .texture("particle", modLoc("block/" + block.registryName()))
-                        .texture("all", modLoc("block/" + block.registryName()));
+                        .parent(models().getExistingFile(mcLoc("block/template_hanging_lantern")))
+                        .texture("lantern", modLoc("block/" + block.registryName()));
 
             getVariantBuilder(block).forAllStates(state -> {
                 BlockModelBuilder model;

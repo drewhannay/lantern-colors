@@ -11,3 +11,8 @@
 ## 2.0.0-1.16.1
 
 - Initial release for 1.16.1
+
+## 2.1.0-1.16.2
+
+- Initial release for 1.16.2
+- Notable vanilla change: Lanterns can now be water-logged!

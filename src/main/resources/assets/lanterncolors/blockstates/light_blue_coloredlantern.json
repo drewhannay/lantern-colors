@@ -1,9 +1,15 @@
 {
   "variants": {
-    "hanging=false": {
+    "hanging=false,waterlogged=false": {
       "model": "lanterncolors:block/light_blue_coloredlantern"
     },
-    "hanging=true": {
+    "hanging=true,waterlogged=false": {
+      "model": "lanterncolors:block/light_blue_hanging_coloredlantern"
+    },
+    "hanging=false,waterlogged=true": {
+      "model": "lanterncolors:block/light_blue_coloredlantern"
+    },
+    "hanging=true,waterlogged=true": {
       "model": "lanterncolors:block/light_blue_hanging_coloredlantern"
     }
   }

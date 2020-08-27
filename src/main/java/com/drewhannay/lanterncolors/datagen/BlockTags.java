@@ -18,8 +18,8 @@ public class BlockTags extends BlockTagsProvider {
 
     @Override
     protected void registerTags() {
-        Builder<Block> builder = func_240522_a_(LANTERNS).func_240532_a_(Blocks.LANTERN);
-        ColoredLanternBlocks.getBlocks().forEach(builder::func_240532_a_);
+        Builder<Block> builder = getOrCreateBuilder(LANTERNS).add(Blocks.LANTERN);
+        ColoredLanternBlocks.getBlocks().forEach(builder::add);
     }
 
     @Override

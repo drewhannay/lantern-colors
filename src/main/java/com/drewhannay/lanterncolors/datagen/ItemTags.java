@@ -21,8 +21,8 @@ public class ItemTags extends ItemTagsProvider {
 
     @Override
     protected void registerTags() {
-        Builder<Item> builder = func_240522_a_(LANTERNS).func_240532_a_(Items.LANTERN);
-        ColoredLanternItems.getItems().forEach(builder::func_240532_a_);
+        Builder<Item> builder = getOrCreateBuilder(LANTERNS).add(Items.LANTERN);
+        ColoredLanternItems.getItems().forEach(builder::add);
     }
 
     @Override

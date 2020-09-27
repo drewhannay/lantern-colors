@@ -16,3 +16,7 @@
 
 - Initial release for 1.16.2
 - Notable vanilla change: Lanterns can now be water-logged!
+
+## 2.1.1-1.16.3
+
+- Add 1.16.3 compatibility [#11](https://github.com/drewhannay/lantern-colors/pull/11)

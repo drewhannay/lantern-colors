@@ -2,26 +2,27 @@ package com.drewhannay.lanterncolors.datagen;
 
 import com.drewhannay.lanterncolors.LanternColors;
 import com.drewhannay.lanterncolors.items.ColoredLanternItems;
-import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.ItemTagsProvider;
-import net.minecraft.item.DyeColor;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.tags.ITag;
+import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.Tag;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ItemTags extends ItemTagsProvider {
 
-    public static final ITag.INamedTag<Item> LANTERNS = net.minecraft.tags.ItemTags.makeWrapperTag(LanternColors.MODID + ":lanterns");
+    public static final Tag.Named<Item> LANTERNS = net.minecraft.tags.ItemTags.bind(LanternColors.MODID + ":lanterns");
 
-    public ItemTags(DataGenerator generatorIn, BlockTagsProvider blockTagsProvider) {
-        super(generatorIn, blockTagsProvider);
+    public ItemTags(DataGenerator generatorIn, BlockTagsProvider blockTagsProvider, ExistingFileHelper existingFileHelper) {
+        super(generatorIn, blockTagsProvider, LanternColors.MODID, existingFileHelper);
     }
 
     @Override
-    protected void registerTags() {
-        Builder<Item> builder = getOrCreateBuilder(LANTERNS).add(Items.LANTERN);
+    protected void addTags() {
+        TagAppender<Item> builder = tag(LANTERNS).add(Items.LANTERN);
         ColoredLanternItems.getItems().forEach(builder::add);
     }
 
@@ -31,7 +32,7 @@ public class ItemTags extends ItemTagsProvider {
     }
 
     // TODO: Is there an existing helper for this?
-    public static ITag.INamedTag<Item> glassPaneTagForDyeColor(DyeColor color) {
+    public static Tag.Named<Item> glassPaneTagForDyeColor(DyeColor color) {
         switch (color) {
             case WHITE:
                 return Tags.Items.GLASS_PANES_WHITE;

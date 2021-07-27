@@ -3,7 +3,7 @@ package com.drewhannay.lanterncolors.datagen;
 import com.drewhannay.lanterncolors.LanternColors;
 import com.drewhannay.lanterncolors.blocks.ColoredLanternBlocks;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.DyeColor;
+import net.minecraft.world.item.DyeColor;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.codehaus.plexus.util.StringUtils;
 
@@ -29,6 +29,6 @@ public class Languages extends LanguageProvider {
     }
 
     private String getTranslationName(DyeColor color) {
-        return Arrays.stream(StringUtils.split(color.getString(), "_")).map(StringUtils::capitalise).collect(Collectors.joining(" "));
+        return Arrays.stream(StringUtils.split(color.getName(), "_")).map(StringUtils::capitalise).collect(Collectors.joining(" "));
     }
 }

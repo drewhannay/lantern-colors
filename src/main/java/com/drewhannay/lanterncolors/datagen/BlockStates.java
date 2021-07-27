@@ -2,12 +2,12 @@ package com.drewhannay.lanterncolors.datagen;
 
 import com.drewhannay.lanterncolors.LanternColors;
 import com.drewhannay.lanterncolors.blocks.ColoredLanternBlocks;
-import net.minecraft.block.LanternBlock;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.LanternBlock;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ExistingFileHelper;
+import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
 
@@ -33,7 +33,7 @@ public class BlockStates extends BlockStateProvider {
 
             getVariantBuilder(block).forAllStates(state -> {
                 BlockModelBuilder model;
-                if (state.get(LanternBlock.HANGING)) {
+                if (state.getValue(LanternBlock.HANGING)) {
                     model = modelHangingLantern;
                 } else {
                     model = modelLantern;

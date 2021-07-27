@@ -3,12 +3,12 @@ package com.drewhannay.lanterncolors.items;
 import com.drewhannay.lanterncolors.LanternColors;
 import com.drewhannay.lanterncolors.blocks.ColoredLanternBlock;
 import com.drewhannay.lanterncolors.blocks.ColoredLanternBlocks;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.DyeColor;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -29,7 +29,7 @@ public final class ColoredLanternItems {
                   RegistryObject<ColoredLanternBlock> block = ColoredLanternBlocks.getRegistryObject(dyeColor);
                   RegistryObject<BlockItem> registeredObject =
                       REGISTRY.register(block.getId().getPath(),
-                                        () -> new BlockItem(block.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+                                        () -> new BlockItem(block.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
                   REGISTRY_OBJECTS.put(dyeColor, registeredObject);
               });
 

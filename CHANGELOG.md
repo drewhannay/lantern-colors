@@ -20,3 +20,7 @@
 ## 2.1.1-1.16.3
 
 - Add 1.16.3 compatibility [#11](https://github.com/drewhannay/lantern-colors/pull/11)
+
+## 3.0.0-1.17.1
+
+- Initial release for 1.17.1 [#12](https://github.com/drewhannay/lantern-colors/pull/12)
